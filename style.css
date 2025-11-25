@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  font-family: "Lora", serif;
+  color: #fff;
+  overflow: hidden;
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.50),
+    0 0 22px rgba(255, 255, 255, 0.32),
+    0 0 40px rgba(255, 255, 255, 0.22);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+
+#enter:hover {
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.65),
+    0 0 30px rgba(255,255,255,0.45),
+    0 0 55px rgba(255,255,255,0.28);
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+
+
+/* Fekete overlay + click to enter */
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+#overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* csak sima szöveg */
+
+#enter {
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+  user-select: none;
+}
+
+/* Videó */
+
+#bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(0);
+}
+
+/* Tartalom */
+
+main {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;        /* Lora-nál kicsit szebb így */
+  margin-bottom: 1rem;
+  letter-spacing: 0.16em;  /* nagyon enyhe betűköz */
+  text-transform: lowercase;
+}
+
+
+nav {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+  text-transform: lowercase;
+}
+
+nav a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #fff;
+}
